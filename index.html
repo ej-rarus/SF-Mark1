@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="favicon.ico">
+    <title>스마트팜 대시보드</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            스마트팜 대시보드
+        </div>
+        <div class="menu-wrap">
+            <div class="nav-menu">모니터링</div>
+            <div class="nav-menu">환경제어</div>
+            <div class="nav-menu">기타</div>
+        </div>
+    </div>
+    
+    <div class="content-wrap">
+        <div class="sidebar-wrap">
+            <div class="side-menu">모니터링</div>
+            <div class="side-menu">환경제어</div>
+            <div class="side-menu">기타</div>
+        </div>
+        <div class="main-wrap">
+            <div class="canvas-wrap">
+                <div class="canvas-container">
+                    <div class="canvas-name">1번</div>
+                    <canvas id="myCanvas1" width="400" height="400" style="border:1px solid #000000;"></canvas>
+                </div>
+                <div class="canvas-container">
+                    <div class="canvas-name">2번</div>
+                    <canvas id="myCanvas2" width="400" height="400" style="border:1px solid #000000;"></canvas>
+                </div>
+            </div>
+            <div class="canvas-wrap">
+                <div class="canvas-container">
+                    <div class="canvas-name">3번</div>
+                    <canvas id="myCanvas3" width="400" height="400" style="border:1px solid #000000;"></canvas>
+                </div>
+                <div class="canvas-container">
+                    <div class="canvas-name">4번</div>
+                    <canvas id="myCanvas4" width="400" height="400" style="border:1px solid #000000;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var c = document.getElementById("myCanvas1");
+        var ctx = c.getContext("2d");
+        ctx.strokeStyle = "red";
+        ctx.moveTo(0, 0);
+        ctx.lineTo(400, 400);
+        ctx.stroke();
+
+        var c = document.getElementById("myCanvas2");
+        var ctx = c.getContext("2d");
+        ctx.strokeStyle = "green";
+        ctx.moveTo(0, 200);
+        ctx.lineTo(400, 400);
+        ctx.stroke();
+
+        var c = document.getElementById("myCanvas3");
+        var ctx = c.getContext("2d");
+        ctx.strokeStyle = "blue";
+        ctx.moveTo(0, 300);
+        ctx.lineTo(400, 400);
+        ctx.stroke();
+
+        var c = document.getElementById("myCanvas4");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 400);
+        ctx.lineTo(400, 0);
+        ctx.stroke();
+    </script>
+</body>
+</html>
