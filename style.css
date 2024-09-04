@@ -18,8 +18,9 @@ body {
     align-items: center;
     width: 100%;
     height: 5vh;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color:  #5A6A85;
+    border-bottom: solid 1px #e5eeef;
 }
 
 .logo {
@@ -37,6 +38,7 @@ body {
 
 .nav-menu {
     margin-right: 2rem;
+    
 }
 
 
@@ -54,19 +56,38 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     width: 10%;
-    background-color: rgb(199, 199, 199);
+    background-color: white;
+    border-right: solid 1px #e5eeef;
+}
+
+.side-menu-h{
+    width: 100%;
+    padding: 1rem;
+    margin:0.2rem;
+    font-size: large;
+    font-weight: bolder;
 }
 
 .side-menu{
-    color: black;
+    color: #5A6A85;
     background-color: white;
-    text-align: center;
+    text-align: left;
     font-size: large;
     padding: 1rem;
     margin: 0.2rem;
-    font-weight: bolder;
-    border: 1px solid;
+    font-weight:400;
+    border: none;
     border-radius: 10px;
+}
+
+.side-menu:hover{
+    background-color: #ECF2FF;
+    color: #7095FF;
+}
+
+#side-menu-da {
+    background-color: #5D87FF;
+    color: white;
 }
 
 .main-wrap{

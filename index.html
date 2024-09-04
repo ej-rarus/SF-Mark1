@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico">
     <title>스마트팜 대시보드</title>
+    <script src="https://kit.fontawesome.com/d878e2d7c4.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
     
 </head>
 <body>
+    <header></header>
     <div class="nav">
         <div class="logo">
             스마트팜 대시보드
         </div>
         <div class="menu-wrap">
+            
             <div class="nav-menu">모니터링</div>
             <div class="nav-menu">환경제어</div>
             <div class="nav-menu">기타</div>
@@ -23,9 +26,16 @@
     
     <div class="content-wrap">
         <div class="sidebar-wrap">
-            <div class="side-menu">모니터링</div>
-            <div class="side-menu">환경제어</div>
-            <div class="side-menu">기타</div>
+            <div class="side-menu-h">HOME</div>
+            <div id="side-menu-da" class="side-menu" ><i class="fa-solid fa-clipboard-list"></i> Dashboard</div>
+            <div class="side-menu-h">기능</div>
+            <div class="side-menu"><i class="fa-solid fa-desktop"></i> 모니터링</div>
+            <div class="side-menu"><i class="fa-solid fa-house-circle-check"></i> 환경제어</div>
+            <div class="side-menu"><i class="fa-solid fa-box-open"></i> 기타</div>
+            <div class="side-menu-h">Auth</div>
+            <div class="side-menu"><i class="fa-solid fa-circle-user"></i> Sign In</div>
+            <div class="side-menu"><i class="fa-solid fa-pen"></i> Sign Up</div>
+
         </div>
         <div class="main-wrap">
             <div class="canvas-wrap">
@@ -50,6 +60,10 @@
             </div>
         </div>
     </div>
+
+    <footer>
+
+    </footer>
 
     <script>
         var ctx = document.getElementById('myCanvas1').getContext('2d');
@@ -105,9 +119,9 @@
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["1", "2", "3","4", "5", "6"],
+                labels: ["13시", "14시", "15시","16시", "18시", "20시"],
                 datasets: [{
-                    label: "°C",
+                    label: "온도(°C)",
                     data: [30, 10, 20, 5, 15, 20],
                     fill: false,
                     borderColor: 'red',
