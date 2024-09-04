@@ -3,6 +3,9 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
 
 body {
     height: 100%;
@@ -85,7 +88,7 @@ body {
     color: #7095FF;
 }
 
-#side-menu-da {
+.selected {
     background-color: #5D87FF;
     color: white;
 }

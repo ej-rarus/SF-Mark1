@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <title>스마트팜 대시보드</title>
     <script src="https://kit.fontawesome.com/d878e2d7c4.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
@@ -14,11 +17,11 @@
     <header></header>
     <div class="nav">
         <div class="logo">
-            스마트팜 대시보드
+            스마트팜 Mark.1 대시보드
         </div>
         <div class="menu-wrap">
             
-            <div class="nav-menu">모니터링</div>
+            <a href="./monitor.html"><div class="nav-menu">모니터링</div></a>
             <div class="nav-menu">환경제어</div>
             <div class="nav-menu">기타</div>
         </div>
@@ -27,14 +30,14 @@
     <div class="content-wrap">
         <div class="sidebar-wrap">
             <div class="side-menu-h">HOME</div>
-            <div id="side-menu-da" class="side-menu" ><i class="fa-solid fa-clipboard-list"></i> Dashboard</div>
+            <a href="./index.html"><div class="side-menu selected" ><i class="fa-solid fa-clipboard-list"></i> Dashboard</div></a>
             <div class="side-menu-h">기능</div>
-            <div class="side-menu"><i class="fa-solid fa-desktop"></i> 모니터링</div>
-            <div class="side-menu"><i class="fa-solid fa-house-circle-check"></i> 환경제어</div>
-            <div class="side-menu"><i class="fa-solid fa-box-open"></i> 기타</div>
+            <a href="./monitor.html"><div class="side-menu"><i class="fa-solid fa-desktop"></i> 모니터링</div></a>
+            <a href="./control.html"><div class="side-menu"><i class="fa-solid fa-house-circle-check"></i> 환경제어</div></a>
+            <a href="./etc.html"><div class="side-menu"><i class="fa-solid fa-box-open"></i> 기타</div></a>
             <div class="side-menu-h">Auth</div>
-            <div class="side-menu"><i class="fa-solid fa-circle-user"></i> Sign In</div>
-            <div class="side-menu"><i class="fa-solid fa-pen"></i> Sign Up</div>
+            <a href=""><div class="side-menu"><i class="fa-solid fa-circle-user"></i> Sign In</div></a>
+            <a href=""><div class="side-menu"><i class="fa-solid fa-pen"></i> Sign Up</div></a>
 
         </div>
         <div class="main-wrap">
