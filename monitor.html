@@ -10,8 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <title>스마트팜 대시보드</title>
     <script src="https://kit.fontawesome.com/d878e2d7c4.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+
+
 </head>
 <body>
     <header></header>
@@ -41,7 +46,10 @@
 
         </div>
         <div class="main-wrap">
-            
+            <div style="width: 80%; margin: auto;">
+                <h2>실시간 온도 데이터</h2>
+                <canvas id="temperatureChart" width="400" height="200"></canvas>
+            </div>
         </div>
     </div>
 
@@ -53,115 +61,73 @@
     </footer>
     <script src="./script.js"></script>
     <script>
-        var ctx = document.getElementById('myCanvas1').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
+        // 차트 초기화
+        const ctx = document.getElementById('temperatureChart').getContext('2d');
+        const temperatureChart = new Chart(ctx, {
+            type: 'line',  // 차트 유형을 선형(line)으로 설정
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: [],  // X축 라벨 (시간)
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
+                    label: '온도 (°C)',  // 차트 데이터셋 이름
+                    data: [],  // 데이터 배열
+                    borderColor: 'rgba(255, 99, 132, 1)',  // 선 색상
+                    borderWidth: 2,
+                    fill: false,  // 아래 영역 채우기 비활성화
+                    tension: 0.1  // 선의 부드러움 정도 (0: 직선, 1: 곡선)
                 }]
             },
             options: {
                 scales: {
+                    x: {
+                        type: 'time',  // X축을 시간 기반으로 설정
+                        time: {
+                            unit: 'second'  // 시간을 초 단위로 표현
+                        },
+                        ticks: {
+                            source: 'auto'
+                        }
+                    },
                     y: {
-                        beginAtZero: true
+                        beginAtZero: false,  // Y축이 0에서 시작하지 않음
+                        suggestedMin: -10,   // 온도 최저값
+                        suggestedMax: 40     // 온도 최고값
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true
                     }
                 }
             }
         });
 
-        var ctx = document.getElementById('myCanvas2').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['A', 'B', 'C', 'D', 'E', 'F' ],
-                datasets: [{
-                    data: [30, 10, 20, 5, 15, 20],
-                    backgroundColor: ['#f54242', '#f59b42', '#f5f542', '#42f59e', '#4281f5', '#f542b3']
-                }]
-            },
-            
-        });
+        // 차트에 데이터 추가하는 함수
+        function addTemperatureData(chart, label, data) {
+            chart.data.labels.push(label);  // 새로운 시간(라벨) 추가
+            chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(data);  // 새로운 온도 데이터 추가
+            });
 
-        var ctx = document.getElementById('myCanvas3').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["13시", "14시", "15시","16시", "18시", "20시"],
-                datasets: [{
-                    label: "온도(°C)",
-                    data: [30, 10, 20, 5, 15, 20],
-                    fill: false,
-                    borderColor: 'red',
-                    tension:0
-                }]
-            },
-            
-        });
+            // X축의 보이는 범위를 현재 시간 기준으로 설정 (마지막 20초만 표시)
+            const maxTime = new Date(label).getTime();  // 현재 시간
+            const minTime = maxTime - 20000;  // 마지막 20초 전 시간
+            chart.options.scales.x.min = minTime;
+            chart.options.scales.x.max = maxTime;
 
-        var ctx = document.getElementById('myCanvas4').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: [
-                    'Co2',
-                    'O2',
-                    'N',
-                    'P',
-                    'Coding',
-                    'Cycling',
-                    'Running'
-                ],
-                datasets: [{
-                    label: 'My First Dataset',
-                    data: [65, 59, 90, 81, 56, 55, 40],
-                    fill: true,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    pointBackgroundColor: 'rgb(255, 99, 132)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(255, 99, 132)'
-                }, {
-                    label: 'My Second Dataset',
-                    data: [28, 48, 40, 19, 96, 27, 100],
-                    fill: true,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgb(54, 162, 235)',
-                    pointBackgroundColor: 'rgb(54, 162, 235)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(54, 162, 235)'
-                }]
-            },
-            options: {
-                elements: {
-                line: {
-                    borderWidth: 3
-                }
-                }
-            },
-            
-        });
+            chart.update();  // 차트 갱신
+        }
+
+        // 실시간 온도 데이터를 랜덤으로 생성
+        function generateRandomTemperature() {
+            return (Math.random() * 40 - 10).toFixed(2);  // -10°C ~ 40°C 범위의 랜덤값 생성
+        }
+
+        // 1초마다 실행되는 함수 (실시간 온도 업데이트)
+        setInterval(() => {
+            const currentTime = new Date();  // 현재 시간을 라벨로 사용
+            const randomTemperature = generateRandomTemperature();  // 랜덤 온도 데이터 생성
+            addTemperatureData(temperatureChart, currentTime, randomTemperature);  // 차트에 데이터 추가
+        }, 1000);  // 1초마다 업데이트
     </script>
 </body>
 </html>

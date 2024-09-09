@@ -44,19 +44,29 @@
             <h1>환경제어</h1>
             <div class="control-box">
                 <div class = "controller">
-                    <h2>광원 설정</h2>
+                    <h3>광원 설정</h3>
                     <form>
                         <label>밝기</label>
                         <input type="range" id="brightness" min="0" max="255">
                     </form>
                 </div>
                 <div class = "controller">
-                    <h2>온도 설정</h2>
+                    <h3>온도 설정</h3>
+                    <p>현재 기온: 25°C</p>
+                    <form>
+                        <input type="button" value="-">
+                        <p>설정온도: 22°C</p>
+                        <input type="button" value="+">
+                    </form>
                 </div>
                 <div class = "controller">
-                    <h2>펌프 설정</h2>
+                    <h3>펌프 설정</h3>
+                    <form>
+                        <input type="button" value="ON">
+                        <input type="button" value="OFF">
+                    </form>
                 </div>
-                <h1>API로부터 받은 JSON 데이터</h1>
+                <h3>API로부터 받은 JSON 데이터</h3>
                 <p><strong>ID:</strong> <span id="id"></span></p>
                 <p><strong>Name:</strong> <span id="name"></span></p>
                 <p><strong>Email:</strong> <span id="email"></span></p>
