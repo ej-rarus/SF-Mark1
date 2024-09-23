@@ -59,6 +59,19 @@
             <div class="footer-content">hello</div>
         </div>
     </footer>
+    <h1 style="text-align: center;">User List</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+        </tr>
+        </thead>
+        <tbody id="userTableBody">
+        <!-- JSON 데이터가 여기 표시됩니다 -->
+        </tbody>
+    </table>
     <script src="./script.js"></script>
     <script>
         // 차트 초기화
@@ -129,5 +142,29 @@
             addTemperatureData(temperatureChart, currentTime, randomTemperature);  // 차트에 데이터 추가
         }, 1000);  // 1초마다 업데이트
     </script>
+    <script>
+        // 페이지가 로드되면 서버로부터 데이터를 가져옴
+        window.onload = function() {
+          fetch('http://localhost:3000/users')
+            .then(response => response.json())
+            .then(data => {
+              const tableBody = document.getElementById('userTableBody');
+              
+              // 데이터를 HTML 테이블에 동적으로 추가
+              data.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                  <td>${user.emp_no}</td>
+                  <td>${user.first_name}</td>
+                  <td>${user.last_name}</td>
+                `;
+                tableBody.appendChild(row);
+              });
+            })
+            .catch(error => {
+              console.error('데이터를 가져오는 중 오류 발생:', error);
+            });
+        }
+      </script>
 </body>
 </html>
