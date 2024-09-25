@@ -1,0 +1,620 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #5A6A85;
+}
+
+body {
+    height: 100%;
+}
+
+
+/* 데스크톱 */
+@media only screen and (min-width: 1025px) {
+    /* 데스크탑에 적용할 스타일 */
+    .nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 5vh;
+        background-color: white;
+        color:  #5A6A85;
+        border-bottom: solid 1px #e5eeef;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        margin-left: 1rem;
+    }
+    
+    .menu-wrap {
+        display: flex;
+        flex-direction: row;
+        font-size: large;
+        font-weight: bold;
+    }
+    
+    .nav-menu {
+        margin-right: 2rem;
+        
+    }
+    
+    
+    .content-wrap{
+    
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    
+    }
+    .side-bar-btn{
+        display: none;
+    }
+    .sidebar-wrap{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 10%;
+        background-color: white;
+        border-right: solid 1px #e5eeef;
+    }
+    
+    .side-menu-h{
+        width: 100%;
+        padding: 1rem;
+        margin:0.2rem;
+        font-size: large;
+        font-weight: bolder;
+    }
+    
+    .side-menu{
+        color: #5A6A85;
+        background-color: white;
+        text-align: left;
+        font-size: large;
+        padding: 1rem;
+        margin: 0.2rem;
+        font-weight:400;
+        border: none;
+        border-radius: 10px;
+    }
+    
+    .side-menu:hover{
+        background-color: #ECF2FF;
+        color: #7095FF;
+    }
+    
+    .selected {
+        background-color: #5D87FF;
+        color: white;
+    }
+    
+    .main-wrap{
+        display: flex;
+        width: 90%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .sign-in-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 15rem;
+    }
+
+    .login_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 1.5rem;
+    }
+
+    #id-input{
+        border: 2px solid #e5eeef;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 2rem;
+    }
+
+    #pw-input{
+        border: 2px solid #e5eeef;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 2rem;
+    }
+
+    #user_login{
+        width: 20rem;
+        height: 3rem;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+        background-color: #5D87FF;
+        margin-bottom: 10rem;
+    }
+
+    .canvas-wrap {
+        display:flex;
+        flex-direction: row;
+        
+    }
+    
+    .canvas-container{
+        margin: 0.25rem;
+    }
+    
+    canvas {
+        border:1px solid #e5eeef;
+    }
+    
+    .sign_up_form{
+        padding-top: 2rem;
+    }
+
+    #user_sign_up{
+        width: 20rem;
+        height: 3rem;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+        background-color: #5D87FF;
+        margin-bottom: 10rem;
+        margin-top: 10rem;
+    }
+
+    .noto-sans-kr{
+      font-family: "Noto Sans KR", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    
+
+    footer {
+        width: 100%;
+        height: 3rem;
+        border-top: 1px solid #e5eeef;
+        background-color: white;
+    }
+    .footer-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-content{
+        text-align: center;
+        color: black;
+    }
+}
+
+
+/* 태블릿 */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* 태블릿에 적용할 스타일 */
+    .nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 5vh;
+        background-color: white;
+        color:  #5A6A85;
+        border-bottom: solid 1px #e5eeef;
+    }
+    
+    .logo {
+        font-size: 1rem;
+        font-weight: bolder;
+        margin-left: 1rem;
+    }
+    
+    .menu-wrap {
+        display: flex;
+        flex-direction: row;
+        font-size: small;
+        font-weight: bold;
+    }
+    
+    .nav-menu {
+        margin-right: 1rem;
+        
+    }
+    
+    
+    .content-wrap{
+    
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: center;
+    
+    }
+    
+    .side-bar-btn{
+        font-size: xx-large;
+        padding-right: 1rem;
+    }
+
+    .btn-on{
+        display: none;
+    }
+    .sidebar-wrap{
+
+        height: 100vh;
+        width: 30%;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: white;
+        border-right: solid 1px #e5eeef;
+    }
+    
+    .side-menu-h{
+        width: 100%;
+        padding-left: 1rem;
+        margin:0.2rem;
+        font-size: large;
+        font-weight: bolder;
+    }
+    
+    .side-menu{
+        color: #5A6A85;
+        background-color: white;
+        text-align: left;
+        font-size: 13px;
+        padding: 1rem;
+        margin: 0.2rem;
+        font-weight:400;
+        border: none;
+        border-radius: 10px;
+    }
+    
+    .side-menu:hover{
+        background-color: #ECF2FF;
+        color: #7095FF;
+    }
+    
+    .selected {
+        background-color: #5D87FF;
+        color: white;
+    }
+    
+    .main-wrap{
+        display: flex;
+        width: 70%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .canvas-wrap {
+        display:flex;
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+        
+    }
+    
+    .canvas-container{
+        width:  100%;
+        height: 100%;
+    }
+    
+    canvas {
+        border:1px solid #e5eeef;
+        height: 100%;
+        width: auto;
+    }
+    
+    .noto-sans-kr{
+        font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .sign-in-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 15rem;
+    }
+
+    .login_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 1.5rem;
+    }
+
+    #id-input{
+        border: 2px solid #e5eeef;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 2rem;
+    }
+
+    #pw-input{
+        border: 2px solid #e5eeef;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 2rem;
+    }
+
+    #user_login{
+        width: 20rem;
+        height: 3rem;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+        background-color: #5D87FF;
+        margin-bottom: 10rem;
+    }
+
+    .sign_up_form{
+        padding-top: 2rem;
+    }
+
+    #user_sign_up{
+        width: 20rem;
+        height: 3rem;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+        background-color: #5D87FF;
+        margin-bottom: 10rem;
+    }
+    
+    footer {
+        width: 100%;
+        height: 3rem;
+        border-top: 1px solid #e5eeef;
+        background-color: white;
+    }
+    .footer-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-content{
+        text-align: center;
+        color: black;
+    }
+
+}
+
+
+/* 모바일 */
+@media only screen and (max-width: 767px) {
+    /* 모바일에 적용할 스타일 */
+    .nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 5vh;
+        background-color: white;
+        color:  #5A6A85;
+        border-bottom: solid 1px #e5eeef;
+    }
+    
+    .logo {
+        font-size: 1rem;
+        font-weight: bolder;
+        margin-left: 1rem;
+    }
+    
+    .menu-wrap {
+        display: flex;
+        flex-direction: row;
+        font-size: small;
+        font-weight: bold;
+    }
+    
+    .nav-menu {
+        margin-right: 1rem;
+        
+    }
+    
+    
+    .content-wrap{
+    
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: center;
+    
+    }
+    
+    .side-bar-btn{
+        font-size: xx-large;
+        padding-right: 1rem;
+    }
+
+    .btn-on{
+        display: none;
+    }
+    .sidebar-wrap{
+
+        height: 100vh;
+        width: 30%;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: white;
+        border-right: solid 1px #e5eeef;
+    }
+    
+    .side-menu-h{
+        width: 100%;
+        padding-left: 1rem;
+        margin:0.2rem;
+        font-size: large;
+        font-weight: bolder;
+    }
+    
+    .side-menu{
+        color: #5A6A85;
+        background-color: white;
+        text-align: left;
+        font-size: 13px;
+        padding: 1rem;
+        margin: 0.2rem;
+        font-weight:400;
+        border: none;
+        border-radius: 10px;
+    }
+    
+    .side-menu:hover{
+        background-color: #ECF2FF;
+        color: #7095FF;
+    }
+    
+    .selected {
+        background-color: #5D87FF;
+        color: white;
+    }
+    
+    .main-wrap{
+        display: flex;
+        width: 70%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .canvas-wrap {
+        display:flex;
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+        
+    }
+    
+    .canvas-container{
+        width:  100%;
+        height: 100%;
+    }
+    
+    canvas {
+        border:1px solid #e5eeef;
+        height: 100%;
+        width: auto;
+    }
+    
+    .noto-sans-kr{
+        font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .sign-in-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 15rem;
+    }
+
+    .login_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 1.5rem;
+    }
+
+    #id-input{
+        border: 2px solid #e5eeef;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 2rem;
+    }
+
+    #pw-input{
+        border: 2px solid #e5eeef;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 2rem;
+    }
+
+    #user_login{
+        width: 20rem;
+        height: 3rem;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+        background-color: #5D87FF;
+        margin-bottom: 10rem;
+    }
+
+    .sign_up_form{
+        padding-top: 2rem;
+    }
+
+    #user_sign_up{
+        width: 20rem;
+        height: 3rem;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+        background-color: #5D87FF;
+        margin-bottom: 10rem;
+    }
+    
+    footer {
+        width: 100%;
+        height: 3rem;
+        border-top: 1px solid #e5eeef;
+        background-color: white;
+    }
+    .footer-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-content{
+        text-align: center;
+        color: black;
+    }
+}
