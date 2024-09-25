@@ -11,18 +11,16 @@ const app = express();
 const PORT = 80;
 app.use(cors()); // CORS 오류 대응
 
-// HTML 파일을 서비스할 정적 파일 경로 설정
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 // 라우터
 
 // 기본 경로에 대한 요청 처리
 app.get('/', (req, res) => {
-    res.send('Express 서버가 실행 중입니다!');
+    res.sendFile(__dirname+'/index.html');
 });
 
-app
+
 
 // 서버 시작
 app.listen(PORT, () => {
