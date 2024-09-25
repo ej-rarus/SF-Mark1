@@ -1,25 +1,38 @@
 // index.js
 const express = require('express');
-const cors = require('cors');
-require('dotenv').config(); // dotenv 패키지 불러오기
 const path = require('path');
-
-
 const app = express();
 
 // 포트 설정
 const PORT = 80;
-app.use(cors()); // CORS 오류 대응
-
 
 
 // 라우터
 
 // 기본 경로에 대한 요청 처리
 app.get('/', (req, res) => {
-    res.sendFile(__dirname+'/index.html');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/control', (req, res) => {
+    res.sendFile(path.join(__dirname, 'control.html'));
+});
+
+app.get('/etc', (req, res) => {
+    res.sendFile(path.join(__dirname, 'etc.html'));
+});
+
+app.get('/monitor', (req, res) => {
+    res.sendFile(path.join(__dirname, 'monitor.html'));
+});
+
+app.get('/sign_in', (req, res) => {
+    res.sendFile(path.join(__dirname, 'sign_in.html'));
+});
+
+app.get('/sign_up', (req, res) => {
+    res.sendFile(path.join(__dirname, 'sign_up.html'));
+});
 
 
 // 서버 시작
