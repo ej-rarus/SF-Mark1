@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 
 // 포트 설정
-const PORT = 80;
+const PORT = 3001;
 
 app.use(cors());
 // 라우터
