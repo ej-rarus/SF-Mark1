@@ -2,11 +2,12 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const cors = require('cors');
 
 // 포트 설정
 const PORT = 80;
 
-
+app.use(cors());
 // 라우터
 
 // 기본 경로에 대한 요청 처리
