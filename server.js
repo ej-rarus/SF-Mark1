@@ -15,29 +15,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 기본 경로에 대한 요청 처리
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'index.html'));
+// });
 
-app.get('/control', (req, res) => {
-    res.sendFile(path.join(__dirname, 'control.html'));
-});
-
-app.get('/etc', (req, res) => {
-    res.sendFile(path.join(__dirname, 'etc.html'));
-});
-
-app.get('/monitor', (req, res) => {
-    res.sendFile(path.join(__dirname, 'monitor.html'));
-});
-
-app.get('/sign_in', (req, res) => {
-    res.sendFile(path.join(__dirname, 'sign_in.html'));
-});
-
-app.get('/sign_up', (req, res) => {
-    res.sendFile(path.join(__dirname, 'sign_up.html'));
-});
 
 
 // 서버 시작
